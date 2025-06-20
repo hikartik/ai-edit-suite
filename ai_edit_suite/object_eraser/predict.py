@@ -8,10 +8,10 @@ import random
 import cv2
 import numpy as np
 
-from object_eraser.src.config import Config
-from object_eraser.src.edge_connect import EdgeConnect
+from .src.config import Config
+from .src.edge_connect import EdgeConnect
 # Import Dataset class to rebuild test_dataset
-from object_eraser.src.dataset import Dataset
+from .src.dataset import Dataset
 
 # Maps object to index
 obj2idx = {

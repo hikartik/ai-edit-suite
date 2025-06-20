@@ -3,10 +3,16 @@
 from PIL import Image
 import numpy as np
 # Import segmentation helpers from extract.py
-from extract import get_class_mask, mask_to_components, create_rgba_from_mask, OBJ2IDX, mask_to_bbox
+from .extract import (
+    get_class_mask,
+    mask_to_components,
+    create_rgba_from_mask,
+    OBJ2IDX,
+    mask_to_bbox,
+)
 
 # Import your removal/inpainting function
-from object_eraser.predict import remove_objects_from_pil
+from .object_eraser.predict import remove_objects_from_pil
 
 def resize_single_instance_from_pil(pil_img: Image.Image, class_name: str, scale: float) -> Image.Image:
     """
