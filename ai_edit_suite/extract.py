@@ -7,7 +7,7 @@ from PIL import Image
 import numpy as np
 import cv2
 import io, zipfile
-from segmentation import get_class_mask
+from .segmentation import get_class_mask
 
 # 1) Device and model loading at import time
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")

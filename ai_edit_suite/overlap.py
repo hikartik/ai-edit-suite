@@ -4,8 +4,13 @@ from PIL import Image
 import numpy as np
 
 # Import helpers from extract.py
-from extract import get_class_mask, mask_to_components, create_rgba_from_mask, OBJ2IDX
-from segmentation import get_class_mask
+from .extract import (
+    get_class_mask,
+    mask_to_components,
+    create_rgba_from_mask,
+    OBJ2IDX,
+    mask_to_bbox,
+)
 def overlap_single_class_from_pil(pil_img1: Image.Image, pil_img2: Image.Image, class_name: str) -> Image.Image:
     """
     Extract all instances of class_name from pil_img1 and overlay them onto pil_img2.
@@ -44,7 +49,7 @@ def overlap_single_class_from_pil(pil_img1: Image.Image, pil_img2: Image.Image, 
         # Determine bbox to get paste position
         # mask_to_components returns masks same size as image; create_rgba crops to bbox
         # Need top-left coords:
-        from extract import mask_to_bbox
+        from .extract import mask_to_bbox
         bbox = mask_to_bbox(inst_mask)
         if bbox is None:
             continue

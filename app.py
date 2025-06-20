@@ -5,12 +5,17 @@ from fastapi.responses import StreamingResponse
 from PIL import Image
 import io
 
-from extract import extract_single_instance_from_pil, extract_multiple_classes_to_zip_bytes
-from object_eraser.predict import remove_objects_from_pil  # your removal function
-from resize import resize_single_instance_from_pil,resize_multiple_classes_from_pil
-from overlap import overlap_classes_from_pil
-import segmentation 
-from object_eraser.predict import init_inpainter, remove_objects_from_pil
+from ai_edit_suite.extract import (
+    extract_single_instance_from_pil,
+    extract_multiple_classes_to_zip_bytes,
+)
+from ai_edit_suite.resize import (
+    resize_single_instance_from_pil,
+    resize_multiple_classes_from_pil,
+)
+from ai_edit_suite.overlap import overlap_classes_from_pil
+from ai_edit_suite import segmentation
+from ai_edit_suite.object_eraser.predict import init_inpainter, remove_objects_from_pil
 app = FastAPI()
 
 

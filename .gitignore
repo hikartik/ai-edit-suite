@@ -1,1 +1,16 @@
-venv
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Local directories
+*.egg-info/
+
+# IDE files
+.vscode/
+.idea/
+
+# MacOS
+.DS_Store
